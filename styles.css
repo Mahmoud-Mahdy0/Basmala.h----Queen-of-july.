@@ -1,0 +1,375 @@
+html {
+  scroll-behavior: smooth;
+}
+/* Global Styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #e6e6fa; /* Light Lavender Background */
+}
+
+/* Header Styles */
+header {
+  background-image: linear-gradient(to right, #8e2de2, #4a00e0);
+  color: #fff;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+header h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+header p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+/* Navigation Bar Styles */
+nav {
+  background-color: rgba(255, 255, 255, 0.7); /* Slightly transparent background */
+  border-bottom: 1px solid #ccc;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #4a00e0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  padding: 1rem;
+  transition: color 0.3s ease;
+  font-size: 1.6rem;
+  margin: -1rem;
+}
+
+nav ul li a:hover {
+  color: #8e2de2;
+}
+
+/* Responsive Navigation Bar */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: row;
+    align-items: center;
+    padding: 0.3rem;
+    margin-bottom:-0.3rem ;
+  }
+
+  nav ul li {
+    margin: -0.3rem 0rem 0.4rem 0;
+  }
+
+  nav ul li a {
+    padding: 0.52rem;
+    font-size: 0.5rem;
+    margin-left: 0.12rem;
+    margin-right: 0.12rem;
+  }
+
+  nav {
+    background-color: rgba(255, 255, 255, 0.851);
+  }
+}
+
+/* Home Icon Styles */
+.home-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4a00e047;
+  color: white;
+  border-radius: 50%;
+  padding: 10px;
+  text-align: center;
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+.home-icon:hover {
+  background-color: #8e2de2;
+}
+
+@media (max-width: 768px) {
+  .home-icon {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+
+/* Main Content Styles */
+main {
+  max-width: 900px;
+  margin: -4rem auto 4rem;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+section {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+section h2 {
+  font-family: 'Great Vibes', cursive;
+  color: #8e2de2;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+section p {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+}
+section .celebration{
+  direction: rtl;
+}
+section .f-plans{
+  direction: rtl;
+  font-weight: 550;
+}
+
+/* Section Background Colors */
+section:nth-of-type(odd) {
+  background-color: #d8bfd8; /* Thistle */
+}
+
+section:nth-of-type(even) {
+  background-color: #b0e0e6; /* Powder Blue */
+}
+
+/* Image Grid Styles */
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-gap: 1rem;
+  animation: fadeIn 1s ease;
+}
+
+.image-grid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer; /* Add cursor pointer for clickable effect */
+}
+
+.image-grid img:hover {
+  transform: scale(1.05);
+}
+
+.image-description {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.image-grid img:hover + .image-description {
+  display: block;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.expanded-img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  main {
+    margin: -2rem auto 2rem;
+    padding: 1rem;
+  }
+
+  section h2 {
+    font-size: 2rem;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .image-grid img {
+    height: 100px;
+  }
+
+  #countdown {
+    font-size: 1.5rem;
+  }
+
+  #countdown div {
+    min-width: 50px;
+    padding: 0.5rem;
+  }
+}
+
+/* Countdown Styles */
+#countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  animation: scaleIn 1s ease;
+  flex-wrap: wrap;
+}
+
+#countdown div {
+  margin: 0.5rem;
+  padding: 1rem;
+  background-color: #8e2de2;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  animation: pulse 2s infinite;
+  min-width: 70px;
+  text-align: center;
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Confetti Styles */
+.confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #ff0, #f00, #0f0, #00f, #f0f, #0ff;
+  opacity: 0;
+  animation: fall linear infinite;
+}
+
+.special-description {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #e6e6fa;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 10;
+  font-size: 12.5px;
+  font-weight: 500;
+  font-style: italic;
+  width: 115px;;
+  margin-top: -3px;
+  margin-bottom: -5px;
+  direction: rtl;
+}
+
+@media (max-width: 768px) {
+  .special-description {
+    width: 85px; /* Adjust width for smaller screens */
+    font-size: 10px; /* Adjust font size for smaller screens */
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 1;
+  }
+}
+p.specials {
+  font-weight:550;
+  font-size:large;
+  color:black ;
+  direction: rtl;
+}
+.specials-a{
+  color: black;
+  background-color: transparent;
+}
+@media (max-width: 768px){
+  .specials-a{
+    color: black;
+    background-color: transparent;
+    
+  }
+}
